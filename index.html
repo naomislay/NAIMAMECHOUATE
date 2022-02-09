@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<HTML>
+<HEAD>
+<TITLE> NAIMA MECHOUATE </TITLE>
+<link rel="stylesheet" type="text/css" href="1.css">
+<SCRIPT language=JavaScript>
+correct=0;
+wrong=0;
+function random(maxValue) {
+day= new Date();
+hour= day.getHours();
+min=day.getMinutes();
+sec=day.getSeconds();
+mili=day.getTime()
+return(((hour*3600)+(min*60)+(sec)+mili) % maxValue);
+}
+function ranom(maxValue) {
+day= new Date();
+mil=day.getTime();
+return((mil) % maxValue);
+}
+function add() {
+if(document.quizform.arithmetic[0].checked)
+maxValue=10;
+else {
+if(document.quizform.arithmetic[1].checked)
+maxValue=30;
+else {
+maxValue=60;
+   }
+}
+numA=random(maxValue);
+numB=ranom(maxValue);
+numC=numA + numB;
+Answer=window.prompt(  numA + "+"  + numB +  " = ", 0);
+ans();
+}
+function subtract() {
+if(document.quizform.arithmetic[0].checked)
+maxValue=10;
+else
+{if(document.quizform.arithmetic[1].checked)
+maxValue=30;
+else {
+maxValue=60
+   }
+}
+numA=random(maxValue);
+numB=ranom(maxValue);
+numC=numA - numB;
+Answer=window.prompt(  numA + "-"  + numB+  " = ", 0);
+ans()
+}
+function multiply() {
+if(document.quizform.arithmetic[0].checked)
+maxValue=10;
+else {
+if(document.quizform.arithmetic[1].checked)
+maxValue=30;
+else {
+maxValue=60
+   }
+}
+numA=random(maxValue);
+numB=ranom(maxValue);
+numC=numA * numB;
+Answer=window.prompt(  numA + "*"  + numB +  " = ", 0);
+ans();
+}
+function check() {
+if ((correct+wrong) != 0) {
+score = "" + ((correct / (correct + wrong)) * 100);
+score = score.substring(0,4) + "%";
+alert("TON SCORE :  \n \n" 
++ correct + " réponse(s) correcte(s)\n"
++ wrong + " réponse(s) incorrecte(s)")
+}
+else alert("Tu n'as pas encore commencé à jouer !");
+}
+function ans() {
+if (Answer == numC) {
+correct++;
+msg = "Bravo, c'est la bonne réponse !";
+}
+else {
+wrong++;
+msg = "Hé !  " + Answer + " n'est pas la bonne réponse !\n\n"
++ "La bonne réponse était " +numC + ".";
+   }
+score = "" + ((correct / (correct + wrong)) * 100);
+score = score.substring(0,4) + "%";
+alert(msg + "\n\nTON SCORE:\n\n" 
++ correct + " réponse(s) correcte(s)\n"
++ wrong + " réponse(s) incorrecte(s)")
+}
+
+</SCRIPT>
+</head>
+
+<body bgColor=#ffffff >
+<CENTER>
+  <h1 style="color:#F843DF"> NAIMA MECHOUATE </h1>
+  <br><br>
+   <p align="center"><font color="#6495ED" size="3" face="Verdana, Arial, Helvetica, sans-serif">Voici quelques exercices simples de calcul sur  L'addition, La soustraction et La multiplication<br>amusez-vous bien !</font> </p><br>
+  <TABLE border=0 width=960 align="center" cellpadding="0" cellspacing="0">
+    <TBODY> 
+    <TR> 
+      <TD height="454"valign="top"><p align="center"> 
+       
+        <FORM name=quizform>
+          <table width="100%" border="0" align="center" bgcolor="#F3BEF0" cellspacing="10" cellpadding="0" height="100">
+            <tr> 
+              <td height="2"> 
+                <div align="center"> 
+                  <input onClick=add() type=button value=addition name="button">
+                  
+                  <input onClick=subtract() type=button value=soustraction name="button2">
+                  
+                  <input onClick=multiply() type=button value=multiplication name="button3">
+                </div>              </td>
+            </tr>
+            <tr bgcolor="#F4DDF3"> 
+              <td height="2"> 
+                <div align="center"><b><font color=#800000 face=Verdana size=-1> 
+                  <input 
+      name=arithmetic type=radio>
+                  Facile 
+                  <input checked name=arithmetic 
+      type=radio>
+                  Moyen 
+                  <input name=arithmetic 
+      type=radio>
+                  Difficile</font></b></div>              </td>
+            </tr>
+            <tr> 
+              <td height="2"> 
+                <div align="center"><b> 
+                  <input onClick=check() type=button value="R&eacute;sultats" name="button4">
+                  
+                  <input onClick=javascript:correct=0;wrong=0; type=button value="Recommencer" name="button4">
+                  </b></div>              </td>
+            </tr>
+          </table>
+          </FORM>
+        <table width="100%" border="0" cellspacing="2" cellpadding="10" align="center">
+          <tr bgcolor="#F4DDF3"> 
+            <td height="80"> 
+              <p><b><font color="#6EB9DD"></font></b> Afin de choisir un niveau parmi <b color="#6EB9DD">FACILE</b> , <b color="#6EB9DD">MOYEN</b> ou <b color="#6EB9DD">DIFFICILE</b>
+                cliquer sur une operation pour avoir ton petit QUIZ .
+                
+                       </td>
+          </tr>
+        </table> <br>     
+<table width="800" border="5" align="center" cellpadding="10" cellspacing="0" bordercolor="#F84CE1" color="#FEFBFD">
+  <tr>
+    <td  ><p><font color="#6EB9DD" size="5" face="Verdana, Arial, Helvetica, sans-serif"><img src="plus.JPEG" alt="addition" width="70" height="70" hspace="5">
+      ADDITION</font><font size="5" face="Verdana, Arial, Helvetica, sans-serif"> Apprendre
+        l'addition</font></p>
+      <table width="410" border="0" cellspacing="0" cellpadding="7" align="center" bgcolor="#FFFFCC">
+  <tr align="left">
+    <td valign="middle" bgcolor="#fa0ef1"><font size="3" face="Verdana, Arial, Helvetica, sans-serif"><b><font color="#FFFFFF">Les
+              tables d'addition</font>  </b></font></td>
+  </tr>
+  <tr align="left">
+    <td bgcolor="#F3BEF0"><font color="#6EB9DD" size="3" face="Verdana, Arial, Helvetica, sans-serif">Addition
+         </font><font face="Verdana, Arial, Helvetica, sans-serif" size="3"><a href="addition-1.htm">La
+        table d'addition de 1</a> </font></td>
+  </tr>
+  <tr align="left">
+    <td bgcolor="#F4DDF3"><font color="#6EB9DD" size="3" face="Verdana, Arial, Helvetica, sans-serif">Addition
+        </font> <font face="Verdana, Arial, Helvetica, sans-serif" size="3"><a href="">La
+        table d'addition de 2</a></font></td>
+  </tr>
+  <tr align="left">
+    <td bgcolor="#F3BEF0"><div align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3"> </font><font color="#6EB9DD" size="3" face="Verdana, Arial, Helvetica, sans-serif">Addition
+         </font> <font face="Verdana, Arial, Helvetica, sans-serif" size="3"><a href="">La
+          table d'addition de 3</a></font></div></td>
+  </tr>
+  <tr align="left">
+    <td bgcolor="#F4DDF3"><div align="left"><font color="#6EB9DD" size="3" face="Verdana, Arial, Helvetica, sans-serif">Addition
+          </font> <font face="Verdana, Arial, Helvetica, sans-serif" size="3"><a href="">La
+          table d'addition de 4</a></font></div></td>
+  </tr>
+  <tr align="left">
+    <td bgcolor="#F3BEF0"><div align="left"><font color="#6EB9DD" size="3" face="Verdana, Arial, Helvetica, sans-serif">Addition
+          </font> <font face="Verdana, Arial, Helvetica, sans-serif" size="3"><a href="">La
+          table d'addition de 5</a></font></div></td>
+  </tr>
+  <tr align="left">
+    <td bgcolor="#F4DDF3"><div align="left"><font color="#6EB9DD" size="3" face="Verdana, Arial, Helvetica, sans-serif">Addition
+          </font> <font face="Verdana, Arial, Helvetica, sans-serif" size="3"><a href="">La
+          table d'addition de 6</a></font></div></td>
+  </tr>
+  <tr align="left">
+    <td bgcolor="#F3BEF0"><div align="left"><font color="#6EB9DD" size="3" face="Verdana, Arial, Helvetica, sans-serif">Addition
+          </font> <font face="Verdana, Arial, Helvetica, sans-serif" size="3"><a href="">La
+          table d'addition de 7</a></font></div></td>
+  </tr>
+  <tr align="left">
+    <td bgcolor="#F4DDF3"><div align="left"><font color="#6EB9DD" size="3" face="Verdana, Arial, Helvetica, sans-serif">Addition
+          </font> <font face="Verdana, Arial, Helvetica, sans-serif" size="3"><a href="">La
+          table d'addition de 8</a></font></div></td>
+  </tr>
+  <tr align="left">
+    <td bgcolor="#F3BEF0"><div align="left"><font color="#6EB9DD" size="3" face="Verdana, Arial, Helvetica, sans-serif">Addition
+          </font> <font face="Verdana, Arial, Helvetica, sans-serif" size="3"><a href="">La
+          table d'addition de 9</a></font></div></td>
+  </tr>
+  <tr align="left">
+    <td height="32" bgcolor="#F4DDF3"><div align="left"><font color="#6EB9DD" size="3" face="Verdana, Arial, Helvetica, sans-serif">Addition
+          </font> <font face="Verdana, Arial, Helvetica, sans-serif" size="3"><a href="">La
+          table d'addition de 10</a></font></div></td>
+  </tr>
+</table>
+</table><br>
+<div  class="D" align="center" width="800" >
+
+<u>Calculatrice en ligne :</u><br><br>
+calcul:
+<input type="text" id="a"  ">
+résultat:
+<input type="text" id="b" onfocus=" document.getElementById('b').value=eval(document.getElementById('a').value)"><br><br>
+<div class="m"> appuyer sur le champ resultat pour avoir le resultat 
+</div><br>
+<input type="button" value="+" id="1"  onclick="document.getElementById('a').value+=document.getElementById('1').value;  "> 
+<input type="button" value="-" id="2"  onclick="document.getElementById('a').value+=document.getElementById('2').value">
+<input type="button" value="/" id="3"  onclick="document.getElementById('a').value+=document.getElementById('3').value">
+<input type="button" value="*" id="4"  onclick="document.getElementById('a').value+=document.getElementById('4').value">
+<input type="button" value="C" id="5"  onclick="a='  ';document.getElementById('a').value=a;">
+</div>
+
+ </body></HTML>
